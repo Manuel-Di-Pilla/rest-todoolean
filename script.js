@@ -27,7 +27,6 @@ $(document).ready(function () {
     var buttonConfirm = $(this);
     var thisId = buttonConfirm.parents('li').attr('data-id');
     var newText = $('.input-change').val();
-    console.log(newText);
     changeData(thisId, newText);
   })
 })
@@ -85,7 +84,7 @@ function deleteData(id) {
 function changeData(id, val) {
   $.ajax({
     url: 'http://157.230.17.132:3012/todos/'+id,
-    method: 'PUT',
+    method: 'PATCH',
     data:{
       text: val,
     },
